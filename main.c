@@ -37,6 +37,6 @@ int generate(unsigned int *u, size_t size) {
 void printa(unsigned int *u, int len) {
   int counter;
   for (counter = 0; counter < len; counter++) {
-    printf("#%d = %d\n", counter, u[count]);
+    printf("#%d = %d\n", counter, u[counter]);
   }
 }
