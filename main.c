@@ -8,7 +8,7 @@ int main() {
   int length = 10;
   unsigned int chicken[length];
 
-  printf("Generate\n")
+  printf("Generate\n");
   generate(chicken,length);
   printa(chicken,length);
 
@@ -29,7 +29,7 @@ int main() {
 
 int generate(unsigned int *u, size_t size) {
   FILE *file = fopen("/dev/urandom", "r");
-  bytesize = size * sizeof(unsigned int);
+  int bytesize = size * sizeof(unsigned int);
   fread(u,sizeof(int),bytesize,file);
   fclose(file);
 }
@@ -37,6 +37,6 @@ int generate(unsigned int *u, size_t size) {
 void printa(unsigned int *u, int len) {
   int counter;
   for (counter = 0; counter < len; counter++) {
-    printf("#%d = %d\n", count, arr[count]);
+    printf("#%d = %d\n", counter, u[count]);
   }
 }
