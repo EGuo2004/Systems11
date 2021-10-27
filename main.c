@@ -5,8 +5,8 @@
 #include <unistd.h>
 
 int main;
-int generate;
-void printa;
+int generate(unsigned int *u, size_t size);
+void printa(unsigned int *u, int len);
 
 int main() {
   int length = 10;
