@@ -4,7 +4,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-int main;
+int main();
 int generate(unsigned int *u, size_t size);
 void printa(unsigned int *u, int len);
 
@@ -33,7 +33,7 @@ int main() {
 
 int generate(unsigned int *u, size_t size) {
   FILE *file = fopen("/dev/urandom", "r");
-  fread(u,sizeof(int),length,file);
+  fread(u,sizeof(int),size,file);
   fclose(file);
 }
 
