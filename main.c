@@ -4,6 +4,10 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+int main;
+int generate;
+void printa;
+
 int main() {
   int length = 10;
   unsigned int chicken[length];
@@ -20,7 +24,7 @@ int main() {
   printf("Pulling From File\n");
   file = fopen("file.txt","r");
   unsigned int cow[10];
-  fread(cow,sizeof(int),sizeof(int),length,file);
+  fread(cow,sizeof(int),length,file);
   fclose(file);
 
   printf("Vertification\n");
