@@ -20,7 +20,7 @@ int main() {
   printf("Pulling From File\n");
   file = fopen("file.txt","r");
   unsigned int cow[10];
-  fread(cow,sizeof(int),length * sizeof(int), file);
+  fread(cow,sizeof(int),sizeof(int),length,file);
   fclose(file);
 
   printf("Vertification\n");
@@ -29,14 +29,13 @@ int main() {
 
 int generate(unsigned int *u, size_t size) {
   FILE *file = fopen("/dev/urandom", "r");
-  int bytesize = size * sizeof(unsigned int);
-  fread(u,sizeof(int),bytesize,file);
+  fread(u,sizeof(int),length,file);
   fclose(file);
 }
 
 void printa(unsigned int *u, int len) {
   int counter;
   for (counter = 0; counter < len; counter++) {
-    printf("#%d = %d\n", counter, u[counter]);
+    printf("#%d = %u\n", counter, u[counter]);
   }
 }
