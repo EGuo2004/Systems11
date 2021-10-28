@@ -20,13 +20,11 @@ int main() {
   int file;
   file = open("file.txt",O_WRONLY,0644);
   write(chicken,file,sizeof(int) * length);
-  fclose(file);
 
   printf("Pulling From File\n");
   file = open("file.txt",O_RDONLY);
   unsigned int cow[10];
   read(cow,file,sizeof(int) * length);
-  fclose(file);
 
   printf("Vertification\n");
   printa(cow,length);
@@ -36,7 +34,6 @@ int generate(unsigned int *u, size_t size) {
   int file;
   file = open("file.txt",O_RDONLY);
   read(u,file,size);
-  fclose(file);
 }
 
 void printa(unsigned int *u, int len) {
