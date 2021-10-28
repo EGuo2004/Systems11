@@ -32,7 +32,7 @@ int main() {
 
 int generate(unsigned int *u, size_t size) {
   int file;
-  file = open("file.txt",O_RDONLY);
+  file = open("/dev/urandom",O_RDONLY);
   read(file,u,size);
 }
 
