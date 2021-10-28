@@ -35,7 +35,7 @@ int main() {
 int generate(unsigned int *u, size_t size) {
   int file;
   file = open("file.txt",O_RDONLY);
-  read(u,file,sizeof(int) * size);
+  read(u,file,size);
   fclose(file);
 }
 
