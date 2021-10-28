@@ -17,7 +17,8 @@ int main() {
   printa(chicken,length);
 
   printf("Pushing In File\n");
-  FILE *file = open("file.txt",O_WRONLY,0644);
+  int *file;
+  file = open("file.txt",O_WRONLY,0644);
   write(chicken,file,sizeof(int) * length);
   fclose(file);
 
@@ -32,7 +33,8 @@ int main() {
 }
 
 int generate(unsigned int *u, size_t size) {
-  FILE *file = open("file.txt",O_RDONLY);
+  int *file;
+  file = open("file.txt",O_RDONLY);
   read(u,file,sizeof(int) * size);
   fclose(file);
 }
