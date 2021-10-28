@@ -13,7 +13,7 @@ int main() {
   unsigned int chicken[length];
 
   printf("Generate\n");
-  generate(chicken,length);
+  generate(chicken,length * sizeof(int));
   printa(chicken,length);
 
   printf("Pushing In File\n");
