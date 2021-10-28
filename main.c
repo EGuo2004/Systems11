@@ -19,7 +19,7 @@ int main() {
   printf("Pushing In File\n");
   int file;
   file = open("file.txt",O_WRONLY,0644);
-  write(file,chicken,file,sizeof(int) * length);;
+  write(file,chicken,sizeof(int) * length);;
 
   printf("Pulling From File\n");
   file = open("file.txt",O_RDONLY);
