@@ -17,14 +17,14 @@ int main() {
   printa(chicken,length);
 
   printf("Pushing In File\n");
-  FILE *file = fopen("file.txt","w");
-  fwrite(chicken,sizeof(int),length,file);
+  FILE *file = open("file.txt",O_WRONLY,0644);
+  write(chicken,file,sizeof(int) * size);
   fclose(file);
 
   printf("Pulling From File\n");
-  file = fopen("file.txt","r");
+  file = open("file.txt",O_RDONLY);
   unsigned int cow[10];
-  fread(cow,sizeof(int),length,file);
+  read(cow,file,sizeof(int) * size);
   fclose(file);
 
   printf("Vertification\n");
@@ -32,8 +32,8 @@ int main() {
 }
 
 int generate(unsigned int *u, size_t size) {
-  FILE *file = fopen("/dev/urandom", "r");
-  fread(u,sizeof(int),size,file);
+  FILE *file = open("file.txt",O_RDONLY);
+  read(u,file,sizeof(int) * size);
   fclose(file);
 }
 
