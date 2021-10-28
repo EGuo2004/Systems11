@@ -18,13 +18,13 @@ int main() {
 
   printf("Pushing In File\n");
   FILE *file = open("file.txt",O_WRONLY,0644);
-  write(chicken,file,sizeof(int) * size);
+  write(chicken,file,sizeof(int) * length);
   fclose(file);
 
   printf("Pulling From File\n");
   file = open("file.txt",O_RDONLY);
   unsigned int cow[10];
-  read(cow,file,sizeof(int) * size);
+  read(cow,file,sizeof(int) * length);
   fclose(file);
 
   printf("Vertification\n");
@@ -33,7 +33,7 @@ int main() {
 
 int generate(unsigned int *u, size_t size) {
   FILE *file = open("file.txt",O_RDONLY);
-  read(u,file,sizeof(int) * size);
+  read(u,file,sizeof(int) * length);
   fclose(file);
 }
 
